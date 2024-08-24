@@ -1,0 +1,4 @@
+.eslintrc.js
+lint-staged.config.js
+next.config.js
+jest.config.js
