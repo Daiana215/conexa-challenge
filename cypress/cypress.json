@@ -1,5 +1,0 @@
-{
-    "host": "daian.dev.local",
-    "api_server": "http://localhost:3000",
-    "integrationFolder": "cypress/integration"
-}

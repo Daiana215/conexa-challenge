@@ -1,0 +1,27 @@
+.characterContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 0.75rem;
+}
+
+.container {
+  gap: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.section {
+  flex-direction: column;
+}
+
+.avatar {
+  height: 3.75rem;
+  width: 3.75rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
