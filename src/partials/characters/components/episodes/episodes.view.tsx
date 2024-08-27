@@ -39,8 +39,8 @@ export const EpisodesView: React.FC<EpisodesViewProps> = ({
       />
       <EpisodeCard
         key={"characterTwo"}
-        title="Character #2"
-        emptyText="Select a character #2 - Episodes"
+        title="Character #2 - Episodes"
+        emptyText="Select a character #2"
         episodes={onlyCharacterTwo || []}
         isLoading={onlyCharacterTwoLoading}
         characterSelected={!!charactersSelected?.characterTwo}
