@@ -23,7 +23,7 @@ export const EpisodesView: React.FC<EpisodesViewProps> = ({
     <div className={styles.episodesContainer}>
       <EpisodeCard
         key={"characterOne"}
-        title="Character #1"
+        title="Character #1 - Episodes"
         emptyText="Select a character #1"
         episodes={onlyCharacterOne || []}
         isLoading={onlyCharacterOneLoading}
@@ -31,7 +31,7 @@ export const EpisodesView: React.FC<EpisodesViewProps> = ({
       />
       <EpisodeCard
         key={"characterOneAndTwo"}
-        title="Character #1 & Character #2"
+        title="Character #1 & Character #2 - Common Episodes"
         emptyText="Select a character #1 & #2"
         episodes={bothCharacters || []}
         isLoading={bothCharactersLoading}
@@ -40,7 +40,7 @@ export const EpisodesView: React.FC<EpisodesViewProps> = ({
       <EpisodeCard
         key={"characterTwo"}
         title="Character #2"
-        emptyText="Select a character #2"
+        emptyText="Select a character #2 - Episodes"
         episodes={onlyCharacterTwo || []}
         isLoading={onlyCharacterTwoLoading}
         characterSelected={!!charactersSelected?.characterTwo}
