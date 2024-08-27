@@ -21,6 +21,7 @@
 
 .card {
   cursor: pointer;
+  height: 13rem;
 }
 
 .container {

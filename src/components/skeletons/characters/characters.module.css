@@ -1,0 +1,6 @@
+.charactersContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, auto);
+  gap: 0.75rem;
+}

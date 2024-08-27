@@ -12,7 +12,6 @@ import { getCharacters } from "../../services/characters-service";
 
 // types
 import { Character } from "./types";
-import { Skeleton } from "antd";
 
 const PAGE_SIZE = 20;
 
@@ -31,7 +30,6 @@ export const CharactersContainer: React.FC = () => {
 
   const {
     data: characters,
-    loading: charactersLoading,
     pagination: { current: currentPage, onChange },
     refresh,
   } = usePagination(getCharacters());
@@ -87,9 +85,7 @@ export const CharactersContainer: React.FC = () => {
     }
   };
 
-  return charactersLoading ? (
-    <Skeleton active />
-  ) : (
+  return (
     <CharactersView
       currentPage={currentPage}
       totalItems={characters?.total || 0}
