@@ -2,12 +2,12 @@
 import MainLayout from "./layout";
 
 // components
-import { CharacterPage } from "./page/characters";
+import { CharactersContainer as Characters } from "partials/characters/characters.container";
 
 export default function Home() {
   return (
     <MainLayout>
-      <CharacterPage />
+      <Characters />
     </MainLayout>
   );
 }

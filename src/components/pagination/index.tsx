@@ -13,6 +13,8 @@ interface PaginationProps {
   handleChange: (page: number) => void;
 }
 
+const PAGE_SIZE = 20;
+
 export const CustomPagination: React.FC<PaginationProps> = ({
   totalItems,
   currentPage,
@@ -25,11 +27,13 @@ export const CustomPagination: React.FC<PaginationProps> = ({
     current: currentPage,
     showSizeChanger: false,
     onChange: handleChange,
+    defaultPageSize: PAGE_SIZE,
   };
+
   return (
     <Flex gap={32} className={styles.pagination}>
       <Pagination {...paginationProps} />
-      <span>{totalItems} items</span>
+      <span>{totalItems} personajes</span>
     </Flex>
   );
 };

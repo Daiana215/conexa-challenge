@@ -8,7 +8,7 @@ import { usePagination, useUpdateEffect } from "ahooks";
 import { CharactersView } from "./characters.view";
 
 // service
-import { getCharacters } from "../../services/character-service";
+import { getCharacters } from "../../services/characters-service";
 
 // types
 import { Character } from "./types";
@@ -25,6 +25,9 @@ export const CharactersContainer: React.FC = () => {
     sectionTwo: [],
     all: [],
   });
+  const [charactersSelected, setCharactersSelected] = useState<
+    Record<string, number>
+  >({});
 
   const {
     data: characters,
@@ -58,6 +61,10 @@ export const CharactersContainer: React.FC = () => {
     setAllCharacters(seenIds.slice(PAGE_SIZE));
   }, [characters]);
 
+  const handleSelectedCharacters = (key: string, value: number): void => {
+    setCharactersSelected((prev) => ({ ...prev, [key]: value }));
+  };
+
   const onNextPage = (): void => {
     onChange(currentPage + 1, PAGE_SIZE);
   };
@@ -87,8 +94,10 @@ export const CharactersContainer: React.FC = () => {
       currentPage={currentPage}
       totalItems={characters?.total || 0}
       handleChangePage={handleChangePage}
+      charactersSelected={charactersSelected}
       sectionOne={visibleCharacters.sectionOne}
       sectionTwo={visibleCharacters.sectionTwo}
+      handleSelectedCharacters={handleSelectedCharacters}
     />
   );
 };

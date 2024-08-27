@@ -1,6 +1,6 @@
 export const urls = {
   characters: {
-    url: "/characters",
+    url: "/",
   },
   characterDetail: {
     url: "/detail/[characterId]",

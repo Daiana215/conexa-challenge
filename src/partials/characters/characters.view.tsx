@@ -2,10 +2,12 @@
 import React from "react";
 
 // antd
-import { Flex, Avatar, Card, Divider } from "antd";
+import { Flex } from "antd";
 
 // components
+import { EpisodesContainer as Episodes } from "./components/episodes/episodes.container";
 import { CustomPagination as Pagination } from "components/pagination/index";
+import { CharacterSection } from "./components/character-section";
 
 // types
 import { CharactersViewProps } from "./types";
@@ -19,74 +21,39 @@ export const CharactersView: React.FC<CharactersViewProps> = ({
   totalItems,
   currentPage,
   handleChangePage,
+  charactersSelected,
+  handleSelectedCharacters,
 }) => {
   return (
     <>
-      <div className={styles.container}>
-        <Card>
-          <Flex gap={24} className={styles.section}>
-            <span>Characters #1</span>
-            <div className={styles.characterContainer}>
-              {sectionOne.map((character) => {
-                return (
-                  <Card key={character.id}>
-                    <Flex align="center">
-                      <div>
-                        <Avatar
-                          src={character.image}
-                          size={"large"}
-                          className={styles.avatar}
-                        />
-                      </div>
-                      <Divider type="vertical" style={{ height: "4rem" }} />
-                      <Flex gap={8} className={styles.section}>
-                        <span>{character.name}</span>
-                        <span>{character.status}</span>
-                        <span>{character.species}</span>
-                      </Flex>
-                    </Flex>
-                  </Card>
-                );
-              })}
-            </div>
-          </Flex>
-        </Card>
+      <Flex className={styles.container}>
+        <div className={styles.containerSection}>
+          <CharacterSection
+            key={"sectionOne"}
+            title="Characters #1"
+            characters={sectionOne}
+            onSelectCharacter={(id) =>
+              handleSelectedCharacters("characterOne", id)
+            }
+          />
+          <CharacterSection
+            key={"sectionTwo"}
+            title="Characters #2"
+            characters={sectionTwo}
+            onSelectCharacter={(id) =>
+              handleSelectedCharacters("characterTwo", id)
+            }
+          />
+        </div>
 
-        <Card>
-          <Flex gap={24} className={styles.section}>
-            <span>Characters #2</span>
-            <div className={styles.characterContainer}>
-              {sectionTwo.map((character) => {
-                return (
-                  <Card key={character.id}>
-                    <Flex align="center">
-                      <div>
-                        <Avatar
-                          src={character.image}
-                          size={"large"}
-                          className={styles.avatar}
-                        />
-                      </div>
-                      <Divider type="vertical" style={{ height: "4rem" }} />
-                      <Flex gap={8} className={styles.section}>
-                        <span>{character.name}</span>
-                        <span>{character.status}</span>
-                        <span>{character.species}</span>
-                      </Flex>
-                    </Flex>
-                  </Card>
-                );
-              })}
-            </div>
-          </Flex>
-        </Card>
-      </div>
+        <Pagination
+          totalItems={totalItems}
+          currentPage={currentPage}
+          handleChange={handleChangePage}
+        />
+      </Flex>
 
-      <Pagination
-        totalItems={totalItems}
-        currentPage={currentPage}
-        handleChange={handleChangePage}
-      />
+      <Episodes charactersSelected={charactersSelected} />
     </>
   );
 };
