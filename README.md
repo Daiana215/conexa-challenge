@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Conexa Challenge
 
-## Getting Started
+## Descripción
 
-First, run the development server:
+Conexa Challenge es una aplicación de frontend desarrollada con **Next.js**, **React** y **TypeScript**. La aplicación permite a los usuarios explorar y seleccionar personajes de la serie _Rick and Morty_, ver episodios en los que aparecen estos personajes y comparar episodios entre personajes seleccionados.
+
+## Tecnologías Utilizadas
+
+- **Next.js**: Framework para React que permite la renderización del lado del servidor y generación de sitios estáticos.
+- **React**: Biblioteca para construir interfaces de usuario.
+- **TypeScript**: Superset de JavaScript que añade tipado estático.
+- **Ant Design**: Biblioteca de componentes de UI.
+- **Rick and Morty API**: API para obtener datos sobre personajes y episodios.
+
+## Características
+
+- **Visualización de Personajes**: Muestra una lista de personajes de la serie.
+- **Paginación**: Navega a través de los personajes usando paginación personalizada.
+- **Selección de Personajes**: Permite seleccionar hasta dos personajes y ver los episodios en los que aparecen.
+- **Comparación de Episodios**: Muestra los episodios compartidos entre los personajes seleccionados en columnas separadas.
+
+## Instalación
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/Daiana215/conexa-challenge.git
+   ```
+
+2. Navega al directorio del proyecto:
+
+   ```bash
+   cd conexa-challenge
+   ```
+
+3. Instala las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+   o si usas yarn:
+
+   ```bash
+   yarn install
+   ```
+
+## Uso
+
+Para iniciar la aplicación en modo desarrollo debes correr el siguiente comando:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+ npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+o si usas yarn:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Esto iniciará el proyecto en el puerto: `http://localhost:3000`
 
-## Learn More
+## Enlaces
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Ver en Vercel](https://conexa-challenge-ten.vercel.app/)
+- [Repositorio en GitHub](https://github.com/Daiana215/conexa-challenge)
