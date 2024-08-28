@@ -22,7 +22,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
   return (
     <Card onClick={() => onSelect(character.id)} className={styles.card}>
       <Flex align="center" style={{ flexDirection: "column" }}>
-        <div>
+        <div data-testid="cardChar">
           <Avatar src={character.image} size={"large"} />
         </div>
         <Divider type="horizontal" className={styles.divider} />

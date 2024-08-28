@@ -1,6 +1,6 @@
 "use client";
 // vendors
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 // antd
@@ -47,9 +47,7 @@ const Home: NextPage = () => {
       <Spin size="large" />
     </Flex>
   ) : (
-    <Suspense>
-      <MainLayout content={<Characters />} />
-    </Suspense>
+    <MainLayout content={<Characters />} />
   );
 };
 

@@ -39,7 +39,7 @@ export const CharactersContainer: React.FC = () => {
   useEffect(() => {
     if (!characters) return;
 
-    const seenIds = [
+    const allCharactersWithUpdatedOrder = [
       ...new Set(
         [...allCharacters, ...(characters?.list || [])].sort(
           (a, b) => a.id - b.id
@@ -47,7 +47,10 @@ export const CharactersContainer: React.FC = () => {
       ),
     ];
 
-    const updatedVisibleCharacters = seenIds.slice(0, PAGE_SIZE);
+    const updatedVisibleCharacters = allCharactersWithUpdatedOrder.slice(
+      0,
+      PAGE_SIZE
+    );
     const sectionOne = updatedVisibleCharacters.slice(0, PAGE_SIZE / 2);
     const sectionTwo = updatedVisibleCharacters.slice(PAGE_SIZE / 2);
     setVisibleCharacters({
@@ -56,7 +59,7 @@ export const CharactersContainer: React.FC = () => {
       sectionTwo,
     });
 
-    setAllCharacters(seenIds.slice(PAGE_SIZE));
+    setAllCharacters(allCharactersWithUpdatedOrder.slice(PAGE_SIZE));
   }, [characters]);
 
   const handleSelectedCharacters = (key: string, value: number): void => {

@@ -27,7 +27,7 @@ export const CharacterSection: React.FC<CharacterSectionProps> = ({
   return (
     <Card className={styles.cardChar} title={title} key={title}>
       <Flex gap={24} className={styles.section}>
-        <div className={styles.characterContainer}>
+        <div className={styles.characterContainer} data-testid="character">
           {characters.map((character) => (
             <CharacterCard
               key={character.id}

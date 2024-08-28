@@ -64,7 +64,7 @@ export const MainLayout: React.FunctionComponent<MainLayoutProps> = ({
           <div style={{ padding: 24, minHeight: 360 }}>{content}</div>
         </Content>
         <Footer style={{ textAlign: "center" }}>
-          Conexa Challenge ©{new Date().getFullYear()} Created by Daiana
+          Conexa Challenge ©{new Date().getFullYear()} Crafted by Daiana
           Grillia
         </Footer>
       </Layout>
